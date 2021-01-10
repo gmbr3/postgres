@@ -257,6 +257,7 @@
 
 #ifdef bool
 #undef bool
+typedef char bool;
 #undef true
 #undef false
 #else
