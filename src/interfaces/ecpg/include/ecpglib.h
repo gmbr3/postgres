@@ -15,6 +15,7 @@
 #ifndef __cplusplus
 #ifdef bool
 #undef bool
+#define bool char
 #undef true
 #undef false
 #else
