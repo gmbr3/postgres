@@ -502,7 +502,7 @@ typedef uint32 CommandId;
 #define MAXDIM 6
 typedef struct
 {
-	int			indx[MAXDIM];
+    int			indx[MAXDIM];
 }			IntArray;
 
 /* ----------------
@@ -521,8 +521,8 @@ typedef struct
  */
 struct varlena
 {
-	char		vl_len_[4];		/* Do not touch this field directly! */
-	char		vl_dat[FLEXIBLE_ARRAY_MEMBER];	/* Data content is here */
+    char		vl_len_[4];		/* Do not touch this field directly! */
+    char		vl_dat[FLEXIBLE_ARRAY_MEMBER];	/* Data content is here */
 };
 
 #define VARHDRSZ		((int32) sizeof(int32))
@@ -549,24 +549,24 @@ typedef struct varlena VarChar; /* var-length char, ie SQL varchar(n) */
  */
 typedef struct
 {
-	int32		vl_len_;		/* these fields must match ArrayType! */
-	int			ndim;			/* always 1 for int2vector */
-	int32		dataoffset;		/* always 0 for int2vector */
-	Oid			elemtype;
-	int			dim1;
-	int			lbound1;
-	int16		values[FLEXIBLE_ARRAY_MEMBER];
+    int32		vl_len_;		/* these fields must match ArrayType! */
+    int			ndim;			/* always 1 for int2vector */
+    int32		dataoffset;		/* always 0 for int2vector */
+    Oid			elemtype;
+    int			dim1;
+    int			lbound1;
+    int16		values[FLEXIBLE_ARRAY_MEMBER];
 } int2vector;
 
 typedef struct
 {
-	int32		vl_len_;		/* these fields must match ArrayType! */
-	int			ndim;			/* always 1 for oidvector */
-	int32		dataoffset;		/* always 0 for oidvector */
-	Oid			elemtype;
-	int			dim1;
-	int			lbound1;
-	Oid			values[FLEXIBLE_ARRAY_MEMBER];
+    int32		vl_len_;		/* these fields must match ArrayType! */
+    int			ndim;			/* always 1 for oidvector */
+    int32		dataoffset;		/* always 0 for oidvector */
+    Oid			elemtype;
+    int			dim1;
+    int			lbound1;
+    Oid			values[FLEXIBLE_ARRAY_MEMBER];
 } oidvector;
 
 /*
@@ -575,7 +575,7 @@ typedef struct
  */
 typedef struct nameData
 {
-	char		data[NAMEDATALEN];
+    char		data[NAMEDATALEN];
 } NameData;
 typedef NameData *Name;
 
@@ -1019,17 +1019,17 @@ typedef NameData *Name;
  */
 typedef union PGAlignedBlock
 {
-	char		data[BLCKSZ];
-	double		force_align_d;
-	int64		force_align_i64;
+    char		data[BLCKSZ];
+    double		force_align_d;
+    int64		force_align_i64;
 } PGAlignedBlock;
 
 /* Same, but for an XLOG_BLCKSZ-sized buffer */
 typedef union PGAlignedXLogBlock
 {
-	char		data[XLOG_BLCKSZ];
-	double		force_align_d;
-	int64		force_align_i64;
+    char		data[XLOG_BLCKSZ];
+    double		force_align_d;
+    int64		force_align_i64;
 } PGAlignedXLogBlock;
 
 /* msb for char */

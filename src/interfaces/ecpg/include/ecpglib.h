@@ -60,7 +60,7 @@ PGTransactionStatusType ECPGtransactionStatus(const char *);
 
 char	   *ECPGerrmsg(void);
 
- /* print an error message */
+/* print an error message */
 void		sqlprint(void);
 
 /* define this for simplicity as well as compatibility */
