@@ -255,7 +255,11 @@
 
 #ifndef __cplusplus
 
-#ifndef bool
+#ifdef bool
+#undef bool
+#undef true
+#undef false
+#else
 typedef char bool;
 #endif
 
