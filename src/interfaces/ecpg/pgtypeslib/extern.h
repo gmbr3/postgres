@@ -38,7 +38,10 @@ int			pgtypes_fmt_replace(union un_fmt_comb, int, char **, int *);
 char	   *pgtypes_alloc(long);
 char	   *pgtypes_strdup(const char *);
 
-#ifndef bool
+#ifdef bool
+#undef bool
+#define bool char
+#else
 #define bool char
 #endif							/* ndef bool */
 
