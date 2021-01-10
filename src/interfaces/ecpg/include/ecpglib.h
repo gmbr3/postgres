@@ -13,7 +13,12 @@
 #include <string.h>
 
 #ifndef __cplusplus
-#ifndef bool
+#ifdef bool
+#undef bool
+#define bool char
+#undef true
+#undef false
+#else
 #define bool char
 #endif							/* ndef bool */
 
